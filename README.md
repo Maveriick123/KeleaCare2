@@ -1,6 +1,4 @@
-![KeleaCare](./Image/readme.png)
-
-# 🚀 KeleaCare2
+# 🚀 KeleaCare
 
 ## 📓 Descripción
 KeleaCare es un sistema inteligente de apoyo emocional que interactúa de manera empática con los usuarios, perfilando su personalidad y ofreciendo respuestas personalizadas y objetivos para su crecimiento personal.
