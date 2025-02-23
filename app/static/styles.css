@@ -1,0 +1,357 @@
+/* Estilos generales */
+body {
+    transform: scale(1.6);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+ 
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+}
+ 
+/* Historial de chats */
+.chat-history {
+    width: 25vw;
+    height: 100vh;
+    background: #ececec;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+ 
+/* Cuando el historial esté oculto */
+.chat-history.hidden {
+    transform: translateX(-100%);
+}
+ 
+.chat-history h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+ 
+.chat-history ul {
+    list-style: none;
+    padding: 0;
+}
+ 
+.chat-history li {
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+ 
+.chat-history li:hover {
+    background: #ddd;
+}
+ 
+/* Botón de cerrar historial */
+.close-history {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+ 
+.close-history:hover {
+    color: red;
+}
+ 
+/* Contenedor del chat */
+.chat-container {
+    width: 75vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    transition: width 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+    margin-left: 25vw;
+}
+ 
+/* Cuando el historial esté oculto, el chat ocupa toda la pantalla */
+.chat-container.fullscreen {
+    width: 100vw;
+    margin-left: 0;
+}
+ 
+/* Cabecera del chat */
+.chat-header {
+    transform: scale(1.6);
+    background: #6a82fb;
+    color: white;
+    height: 30px;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el texto */
+    margin-left: 10px; /* Espacio entre la cabecera y el historial de chats */
+}
+ 
+ 
+/* Iconos de historial y usuario */
+.chat-header .open-history,
+.chat-header .user-circle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+ 
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Asegura un espacio entre cada elemento */
+}
+ 
+.chat-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+ 
+.chat-logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: 50px;
+}
+ 
+ 
+.chat-header .open-history {
+    left: 15px; /* Mantiene el botón de historial a la izquierda */
+}
+ 
+.chat-header .user-circle {
+    right: 15px; /* Mantiene el icono de usuario a la derecha */
+}
+ 
+/* Redirigir el círculo de usuario a la página de inicio de sesión */
+.user-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+ 
+.user-circle::before {
+    content: '\1F464'; /* Ícono de usuario Unicode */
+    font-size: 20px;
+}
+ 
+.user-circle:hover {
+    background: #ddd;
+}
+ 
+.user-circle:active {
+    background: #ccc;
+}
+ 
+.user-circle a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+ 
+/* Contenedor de los mensajes */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+ 
+/* Mensajes generales */
+.message {
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+}
+ 
+/* Mensajes del bot */
+.message-bot {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+    color: black;
+     border-radius: 0px 10px 10px 10px;
+}
+ 
+/* Mensajes del usuario */
+.message-user {
+    align-self: flex-end;
+    background-color: #6a82fb;
+    color: white;
+    border-radius: 10px 10px 0px 10px;
+}
+ 
+/* Entrada del chat */
+.chat-input {
+    display: flex;
+    padding: 7px;
+    background-color: #d1d1d1;
+    border-top: 1px solid #ccc;
+    margin-bottom: 25px; /* Agrega espacio debajo del input */
+    border-radius: 10px;
+        margin-left: auto; /* Ajusta el margen izquierdo */
+    margin-right: auto; /* Ajusta el margen derecho */
+    width: 98%; /* Asegura que tenga el mismo espacio en ambos lados */
+}
+ 
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+ 
+.chat-input button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #6a82fb;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+.chat-input button:hover {
+    background-color: #5a72ea;
+}
+ 
+/* Contenedor del switch y etiqueta */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Antes era 10px, ahora se reduce a 5px */
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+}
+ 
+ 
+/* Estilos del Switch */
+.theme-switch {
+    position: absolute;
+    gap: 5px;
+    top: 50%;
+    right: 60px; /* Ubica el switch a la derecha */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+ 
+/* Ocultar checkbox */
+.theme-switch input {
+    display: none;
+}
+ 
+.theme-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Cambia a otro color si es necesario */
+}
+ 
+/* Estilos del switch */
+.switch {
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+ 
+/* Círculo deslizante */
+.switch::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+ 
+/* Activar switch */
+.theme-switch input:checked + .switch {
+    background: #ff6699; /* Color cuando está activado */
+}
+ 
+/* Mover el círculo al activarlo */
+.theme-switch input:checked + .switch::before {
+    left: 25px;
+}
+ 
+/* Estilo del botón con el icono */
+.icon-button {
+    width: 40px;
+    height: 40px;
+    background-color: white; /* Fondo blanco */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-right: 10px; /* Espacio entre el icono y el input */
+    transition: transform 0.2s ease-in-out;
+}
+ 
+/* Efecto al pasar el cursor */
+.icon-button:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+ 
+/* Ajuste de la imagen dentro del botón */
+.icon-button img {
+    width: 110%; /* Ajustar tamaño de la imagen */
+    height: 110%;
+    object-fit: contain;
+}

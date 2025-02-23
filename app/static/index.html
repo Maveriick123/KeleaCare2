@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Enlace al archivo CSS -->
+    <script src="/static/script.js"></script>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="chat-history">
+            <span class="close-history" onclick="toggleHistory()">✖</span>
+            <h2>Historial de Chats</h2>
+            <ul>
+                <li>Chat 1</li>
+                <li>Chat 2</li>
+                <li>Chat 3</li>
+            </ul>
+        </div>
+
+        <div class="chat-container" id="chatContainer" data-background="static/Image/back.jpeg" style="background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <div class="chat-header">
+                <img src="/static/Image/historial.png" class="open-history" onclick="toggleHistory()" style="display: none; cursor: pointer; width: 30px; height: 30px;">
+
+                <span class="chat-title">Kelea</span>
+                <img src="/static/Image/Logo_relleno.png" class="chat-logo">
+                <span class="chat-title">Care</span>
+
+                
+
+                <div class="theme-switch">
+                    <span class="theme-label">Paula's Mode</span>
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" class="switch"></label>
+                </div>
+                <a href="/static/login.html" class="user-circle"></a>
+            </div>
+            <div class="chat-messages">
+                <div class="message message-bot">
+                    <div class="message-content">Hola, ¿cómo te sientes hoy?</div>
+                </div>
+                <div class="message message-user">
+                    <div class="message-content">Me siento un poco ansioso.</div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <div class="icon-button">
+                    <img src="/static/Image/graphic.png" alt="Icono">
+                </div>
+                <input type="text" placeholder="Escribe un mensaje...">
+                <button onclick = "sendMessage()">Enviar</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

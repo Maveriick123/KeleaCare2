@@ -1,0 +1,142 @@
+/* Estilos generales */
+body {
+    transform: scale(0.6);
+    transform-origin: top left;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Botón de cierre */
+.close-button {
+    position: absolute;
+    top: 1.25rem; /* 20px */
+    left: 1.25rem; /* 20px */
+    font-size: 3.75rem; /* 60px */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-button:hover {
+    color: orange;
+}
+
+/* Contenedor del login */
+.login-container {
+    transform: scale(0.6);
+    transform-origin: top left;
+    background: #e1e1e1;
+    padding: 1.875rem; /* 30px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* 0 4px 8px */
+    text-align: center;
+    width: 50vh;
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(225, 225, 225, 0.30);
+    /* Blanco semi-transparente */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.4); /* 0 4px 8px */
+    border: 0.0625rem solid rgba(255, 255, 255, 0.3); /* 1px */
+
+    backdrop-filter: blur(6.25rem); /* 100px */
+    /* Aplica un desenfoque al fondo detrás */
+}
+
+/* Logo */
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 21.875rem; /* 350px */
+}
+
+/* Título */
+.titulo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-container h2 {
+    font-size: 2.8125rem; /* 45px */
+    /* Cambia el tamaño según lo que prefieras */
+    font-weight: bold;
+    /* Opcional, para hacerlo más grueso */
+    color: #000;
+    /* Opcional, por si quieres cambiar el color */
+    text-shadow: -0.0625rem -0.0625rem 0 white,
+                 0.0625rem -0.0625rem 0 white,
+                -0.0625rem  0.0625rem 0 white,
+                 0.0625rem  0.0625rem 0 white;
+    /* Borde blanco */
+}
+
+.login-container input {
+    width: 70%;
+    /* Ajusta el ancho del input */
+    padding: 0.75rem; /* 12px */
+    margin: 0.9375rem 0; /* 15px */
+    font-size: 1rem; /* 16px */
+    border: 0.125rem solid rgba(255, 255, 255, 0.7); /* 2px */
+    border-radius: 0.5rem; /* 8px */
+    background: rgba(255, 255, 255, 0.1);
+    /* Fondo semi-transparente */
+    color: white !important;
+    /* Texto blanco */
+    outline: none;
+    /* Quita el borde azul al hacer clic */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Cambios al hacer clic en el input */
+.login-container input:focus {
+    border: 0.125rem solid white; /* 2px */
+    background: rgba(255, 255, 255, 0.2);
+    /* Aumenta la opacidad al enfocar */
+}
+
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* 🔹 Hace que el placeholder sea blanco semi-transparente */
+}
+
+/* Botón */
+.boton-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 1.25rem; /* 20px */
+}
+
+button {
+    width: 75%;
+    background: #6a82fb;
+    color: white;
+    border: none;
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+    cursor: pointer;
+    font-size: 1.25rem; /* 20px */
+    font-weight: bold;
+}
+
+button:hover {
+    background: #5a72ea;
+}
