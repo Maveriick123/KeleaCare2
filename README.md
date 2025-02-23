@@ -70,5 +70,5 @@ Si detectas algún problema de seguridad, revisa [SECURITY.md](./SECURITY.md) pa
 Este proyecto está licenciado bajo [nombre de la licencia], ver el archivo [LICENSE](./LICENSE) para más detalles.
 
 ## 📩 Contacto
-Para cualquier duda o sugerencia, puedes contactar con nosotros mediante los correos proporcionados en el apartado de participantes. 🚀
+Para cualquier duda o sugerencia, puedes contactar con nosotros abriendo un issue. 🚀
 
